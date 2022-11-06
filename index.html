@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comparando dois números</title>
-  <link rel="stylesheet" href="./main.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">      
+    <link rel="stylesheet" href="./main.css">  
 </head>
-
 <body>
-  <div class="container">
-    <h1>Comparando dois números</h1>
-    <form>
-      <input id="input-a" type="number" required placeholder="Primeiro valor" />
-      <h2>é menor que</h2>
-      <input id="input-b" type="number" required placeholder="Segundo valor" />
-      <div class="break"></div>
-      <button id="submit-button" type="submit">Comparar</button>
-    </form>
-    <p class="alert"></p>
-  </div>
-  <script src="./main.js"></script>
-</body>
+    <div class="container">
+        <header>
+            <h1>Lista de Tarefas</h1>
+        </header>
+        <form id="form-tarefa">
+            <input type="text" id="nome-tarefa" required placeholder="Nome da Tarefa" />
+            <button type="submit">Cadastrar</button>
+        </form>
+                <ul>
+                    <li id="nova-atividade">
+                    </li>
+                </ul>
+    </div>
+    <script src="./main.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+            $(document).click(function() {
+                $('li').toggleClass('crossOut');
+            })
+    
+     </script>
 
+</body>
 </html>
