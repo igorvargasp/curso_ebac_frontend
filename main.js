@@ -1,35 +1,44 @@
-const form = document.getElementById('form-tarefa');
-const tarefas = [];
+$(document).ready(function () {
 
+    $('#telefone').mask('(00) 00000-0000')
+    $('#cpf').mask('000.000.000-00')
+    $('#cep').mask('00000-000')
 
-let linhas = '';
+    $('form').validate({
+        rules: {
+            nome: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            telefone: {
+                required: true
+            },
+            cpf: {
+                required: true
+            },
+            cep: {
+                required: true
+            },
+        },
 
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
+        messages: {
+            nome: 'Por favor, insira o seu nome',
+            telefone: 'Por favor, forneça um telefone válido.',
+            cpf: 'Por favor, forneça um CPF válido.',
+            cep: 'Por favor, forneça um CEP válido.',
+        },
 
-    adicionaLinha();
-    atualizaTabela();
+        submitHandler: function (form) {
+            console.log(form)
+        },
+        invalidHandler: function (evento, validador) {
+            let camposIncorretos = validador.numberOfInvalids();
+            if (camposIncorretos) {
+                alert(`Existem ${camposIncorretos} campos incorretos`)
+            }
+        }
+    })
 })
-
-function adicionaLinha() {
-    const inputNomeTarefa = document.getElementById('nome-tarefa');
-
-    if (tarefas.includes(inputNomeTarefa.value)) {
-        alert(`A Tarefa: ${inputNomeTarefa.value} já foi cadastrada`);
-    } else {
-        tarefas.push(inputNomeTarefa.value);
-
-        let linha = '<ul>';
-        linha += `<li>${inputNomeTarefa.value}</li>`;
-        linha += `</ul>`;
-
-        linhas += linha;
-    }
-
-    inputNomeTarefa.value = '';
-}
-
-function atualizaTabela() {
-    const corpoTabela = document.querySelector('ul');
-    corpoTabela.innerHTML = linhas;
-}
