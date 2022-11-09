@@ -45,12 +45,47 @@
             </form>
         </div>
     </section>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="./js/jquery.mask.min.js"></script>
     <script src="./js/jquery.validate.min.js"></script>
     <script src="./js/messages_pt_BR.min.js"></script>
-    <script src="./main.js"></script>
+    <script>
+  $('#telefone').mask('(00) 00000-0000');
+        $('#cep').mask('00000-000');
+        $('#cpf').mask('000.000.000-00');
+
+        $('form').validate({
+            rules: {
+                nome:{
+                    required: true
+                },
+                email:{
+                    required: true,
+                    email: true
+                },
+                telefone:{
+                    required: true
+                },
+                cpf:{
+                    required: true
+                },
+                endereço:{
+                    required: true
+                },
+                cep:{
+                    required: true
+                }
+            },
+            messages: {
+                nome: 'Insira seu nome',
+                email: 'Insira seu email',
+                telefone: 'Insira seu telefone',
+                cpf: 'Insira seu CPF',
+                endereço: 'Insira seu endereço',
+                cep: 'Insira seu CEP',
+            }
+        });
+
+    </script>
 </body>
 </html>
