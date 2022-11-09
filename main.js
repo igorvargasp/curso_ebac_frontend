@@ -1,35 +1,14 @@
-const form = document.getElementById('form-tarefa');
-const tarefas = [];
-
-
-let linhas = '';
-
-form.addEventListener('submit', function (e) {
+$(document).ready(function () {
+  $("form").on("submit", function (e) {
     e.preventDefault();
+    const adicionarTarefa = $("#nomeTarefa").val();
+    const novoItem = `<li>${adicionarTarefa}</li>`;
+    $().appendTo(novoItem);
+    $(novoItem).appendTo("ul");
+    $("#nomeTarefa").val("");
+  });
 
-    adicionaLinha();
-    atualizaTabela();
-})
-
-function adicionaLinha() {
-    const inputNomeTarefa = document.getElementById('nome-tarefa');
-
-    if (tarefas.includes(inputNomeTarefa.value)) {
-        alert(`A Tarefa: ${inputNomeTarefa.value} já foi cadastrada`);
-    } else {
-        tarefas.push(inputNomeTarefa.value);
-
-        let linha = '<ul>';
-        linha += `<li>${inputNomeTarefa.value}</li>`;
-        linha += `</ul>`;
-
-        linhas += linha;
-    }
-
-    inputNomeTarefa.value = '';
-}
-
-function atualizaTabela() {
-    const corpoTabela = document.querySelector('ul');
-    corpoTabela.innerHTML = linhas;
-}
+  $("#lista").on("click", "li", function () {
+    $(this).css({ "text-decoration": "line-through" });
+  });
+});

@@ -4,34 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tarefas</title>
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="./main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">      
-    <link rel="stylesheet" href="./main.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bungee&family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Lista de Tarefas</h1>
+            <h1>Lista de tarefas</h1>
         </header>
-        <form id="form-tarefa">
-            <input type="text" id="nome-tarefa" required placeholder="Nome da Tarefa" />
-            <button type="submit">Cadastrar</button>
+        <form>
+            <input type="text" id="nomeTarefa" required placeholder="Nome da tarefa">
+            <button type="submit" id="btn-add">Adicionar</button>
         </form>
-                <ul>
-                    <li id="nova-atividade">
-                    </li>
-                </ul>
+        <div>
+            <ul id="lista">
+            </ul>
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="./main.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script>
-            $(document).click(function() {
-                $('li').toggleClass('crossOut');
-            })
-    
-     </script>
-
 </body>
 </html>
