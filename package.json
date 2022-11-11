@@ -1,0 +1,23 @@
+{
+  "name": "exercicio_sass",
+  "version": "1.0.0",
+  "description": "CONVERTENDO ARQUIVO CSS PARA SASS",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass source/main.scss build/main.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Igoroots34/exercicio_SASS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Igoroots34/exercicio_SASS/issues"
+  },
+  "homepage": "https://github.com/Igoroots34/exercicio_SASS#readme",
+  "devDependencies": {
+    "g": "^2.0.1"
+  }
+}

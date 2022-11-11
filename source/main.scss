@@ -1,0 +1,129 @@
+@use 'config/reset';
+@use 'config/variaveis';
+
+body {
+    background-color: variaveis.$corDoFundo;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: variaveis.$gradienteCabecalho;
+    background-image: linear-gradient(90deg, variaveis.$gradienteCabecalhoStart);
+    background-blend-mode: darken;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+
+    img {
+        max-width: 70px;
+    }
+}
+
+.menu {
+    display: flex;
+
+    li {
+        font-weight: bold;
+        margin-left: 24px;
+        list-style: none;
+
+        a {
+            color: variaveis.$corDoTexto;
+            text-decoration: none;
+            font-size: 24px
+        }
+    }
+}
+
+section {
+    padding: 56px 0;
+
+    h2 {
+        color: variaveis.$corDoTexto;
+        font-size: 32px;
+    }
+
+    .products {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 32.66%);
+        column-gap: 1%;
+        row-gap: 4%;
+        width: 100%;
+        list-style: none;
+    
+        img {
+            max-width: 22em;
+            width: 100%;
+            border-radius: 16px;
+        }
+    
+        h4 {
+            font-size: 24px;
+            color: variaveis.$corDoTexto;
+            margin-top: 8px;
+        }
+
+        p {
+            font-size: 16px;
+            color: variaveis.$corDoTexto;
+            margin-top: 8px;
+        }
+
+        .product-button {
+            display: block;
+            background-color: variaveis.$corBtn;
+            color: variaveis.$corDoTexto;
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 8px;
+            margin-top: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 24px;
+
+            &:hover {
+                background-color: variaveis.$corBtnSecundaria;
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: variaveis.$tablet) {
+    .container {
+        max-width: 80%;
+    }
+
+    section .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: variaveis.$mobile) {
+    .container {
+        max-width: 90%;
+    }
+    
+    section .products {
+        display: block;
+        
+        .product-item  {
+            margin-bottom: 32px;
+        }
+    }
+}
