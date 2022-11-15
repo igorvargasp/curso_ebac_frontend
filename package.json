@@ -1,23 +1,21 @@
 {
-  "name": "exercicio_sass",
+  "name": "gulp",
   "version": "1.0.0",
-  "description": "CONVERTENDO ARQUIVO CSS PARA SASS",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass source/main.scss build/main.css --watch",
+    "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Igoroots34/exercicio_SASS.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Igoroots34/exercicio_SASS/issues"
-  },
-  "homepage": "https://github.com/Igoroots34/exercicio_SASS#readme",
   "devDependencies": {
-    "g": "^2.0.1"
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-obfuscate": "^0.2.9",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.55.0"
   }
 }
